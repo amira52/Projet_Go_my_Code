@@ -1,0 +1,12 @@
+footer {
+  position: fixed;
+  text-align: center;
+  width: 99%;
+  bottom: 0;
+  background-color: rgb(15, 15, 97);
+  color: white;
+  font-family: monospace;
+  border-radius: 5px;
+  padding: 1.5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

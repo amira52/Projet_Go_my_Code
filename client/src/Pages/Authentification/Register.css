@@ -1,0 +1,38 @@
+.forms {
+  display: flex;
+  flex-direction: column;
+  margin-left: 38%;
+  margin-top: 18px;
+  width: 25%;
+}
+.custom-control {
+  margin-top: 20px;
+}
+.btn {
+  margin-top: 12px;
+  margin-bottom: 12px;
+  border-radius: 5px;
+  background-color: rgb(27, 27, 128);
+  color: white;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  width: 10%;
+}
+
+.col-md-9 {
+  color: rgb(132, 126, 118);
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.login-heading {
+  font-size: 26px;
+  color: rgb(127, 123, 123);
+}
+.form-control {
+  border-radius: 5px;
+  padding: 5px;
+  border-color: rgb(255, 251, 250);
+  background-color: rgb(241, 247, 250);
+}
+label {
+  color: black;
+  font-family: cursive;
+}

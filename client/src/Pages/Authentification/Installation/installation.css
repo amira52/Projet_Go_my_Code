@@ -1,0 +1,29 @@
+.vdo {
+  margin-top: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+.section {
+  background-color: rgb(225, 228, 228);
+  border-radius: 10px;
+  padding-bottom: 8%;
+  padding-top: 0.5%;
+  margin-top: 1%;
+}
+h4 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-size: 40px;
+  text-decoration: underline;
+  color: rgb(225, 151, 15);
+}
+p {
+  background-color: rgb(217, 222, 225);
+  padding: 4%;
+  border-radius: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 18px;
+  line-height: 52px;
+  color: rgb(127, 125, 125);
+}

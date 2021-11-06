@@ -1,0 +1,11 @@
+.mt-0 {
+  font-size: 22px;
+  color: rgb(176, 172, 172);
+  margin-left: 15px;
+}
+.carte {
+  background-image: url("https://cdn.dribbble.com/users/2343050/screenshots/5301313/colorful_2x_4x.png");
+  background-repeat: no-repeat;
+  padding-top: 5%;
+  padding-bottom: 25%;
+}
