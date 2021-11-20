@@ -1,0 +1,60 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  background-color: #eee;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.heart {
+  background-color: #dddddd;
+  height: 60px;
+  width: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 19px;
+  cursor: pointer;
+  transition: all 0.5s;
+  position: relative;
+}
+
+.heart:hover {
+  color: #fb076d;
+  background-color: #fb076d40;
+}
+
+.heart .counter {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  border-radius: 10px;
+  z-index: -1;
+  font-size: 16px;
+  height: 40px;
+  width: 40px;
+  background-color: #fb076d;
+}
+
+.heart:hover .counter {
+  animation: anim 1s forwards;
+  z-index: 1;
+}
+
+@keyframes anim {
+  from {
+    top: 0px;
+  }
+
+  to {
+    top: -48px;
+  }
+}

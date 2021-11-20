@@ -5,6 +5,12 @@
   margin-top: 18px;
   width: 25%;
 }
+.container1-fluid {
+  background-image: url("https://img.freepik.com/free-vector/online-registration-sign-up-with-man-sitting-near-smartphone_268404-95.jpg?size=626&ext=jpg");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-position: left;
+}
 .custom-control {
   margin-top: 20px;
 }

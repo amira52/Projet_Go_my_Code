@@ -6,7 +6,6 @@ import Box from "@mui/material/Box";
 import UserCard from "./UserCard";
 const Admin = () => {
   const users = useSelector((state) => state.userReducer.users);
-  console.log("users",users);
   const load = useSelector((state) => state.userReducer.load);
   const isError = useSelector((state) => state.userReducer.isError);
   const dispatch = useDispatch();

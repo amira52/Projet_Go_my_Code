@@ -2,7 +2,12 @@
   --input-padding-x: 1.5rem;
   --input-padding-y: 0.75rem;
 }
-
+.container-fluidd {
+  background-image: url("https://www.streetas.com/images/candidate-login.png");
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-position: right;
+}
 .login,
 .image {
   min-height: 100vh;

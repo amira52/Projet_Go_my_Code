@@ -9,6 +9,7 @@ import {
   GET_ALL_USERS_SUCCESS,
   GET_ALL_USERS_FAIL,
   GET_ALL_USERS_LOAD,
+  GET_USER,
 } from "../constants/user";
 
 export const register = (user, history) => async (dispatch) => {
@@ -19,7 +20,7 @@ export const register = (user, history) => async (dispatch) => {
     dispatch({ type: REGISTER_USER, payload: result.data }); //{user,token,msg}
     history.push("/profile");
   } catch (error) {
-    error.response.data.errors.map(el => alert (el.msg));
+    error.response.data.errors.map((el) => alert(el.msg));
     // fail
     dispatch({ type: FAIL_USER, payload: error.response.data.errors });
   }
@@ -28,10 +29,11 @@ export const register = (user, history) => async (dispatch) => {
 export const login = (user, history) => async (dispatch) => {
   dispatch({ type: LOAD_USER });
   try {
-    const {data} = await axios.post("/api/user/login", user);
+    const { data } = await axios.post("/api/user/login", user);
     dispatch({ type: LOGIN_USER, payload: data }); //{msg,token,user}
-    data?.user?.role === "admin" ?  history.push("./admin"): history.push("./profile");
-   
+    data?.user?.role === "admin"
+      ? history.push("./admin")
+      : history.push("./profile");
   } catch (error) {
     dispatch({ type: FAIL_USER, payload: error.response.data.errors });
   }
@@ -64,24 +66,47 @@ export const videErrors = () => {
   };
 };
 
-export const editProfile = (id, user, history) => async (dispatch) => {
+export const getAllUsers = () => async (dispatch) => {
+  dispatch({ type: GET_ALL_USERS_LOAD });
   try {
-    await axios.put(`/api/user/${id}`, user);
-    dispatch(LOAD_USER());
-    alert("Profile Updated")
-    history.push("/profile");
+    const { data } = await axios.get("/api/user/admin/users");
+    dispatch({ type: GET_ALL_USERS_SUCCESS, payload: data });
+  } catch (error) {
+    dispatch({ type: GET_ALL_USERS_FAIL });
+  }
+};
+
+export const deleteUser = (id) => async (dispatch) => {
+  try {
+    await axios.delete(`/api/user/admin/users/${id}`);
+    dispatch(getAllUsers());
+  } catch (error) {
+    dispatch({ type: GET_ALL_USERS_FAIL });
+  }
+};
+
+export const getUser = (id) => async (dispatch) => {
+  dispatch({ type: LOAD_USER });
+  try {
+    await axios.get(`/api/editProfile/user/${id}`);
+    dispatch(current());
   } catch (error) {
     dispatch({ type: FAIL_USER });
   }
 };
+export const editUser = (user, history) => async (dispatch) => {
+  const config = {
+    headers: {
+      authorization: localStorage.getItem("token"),
+    },
+  };
+  try {
+    await axios.put(`/api/user/editProfile`, user, config);
+    alert("Profile Updated");
 
-
-export const getAllUsers=()=> async(dispatch)=>{
-    dispatch({type:GET_ALL_USERS_LOAD});
-    try {
-      const {data} = await axios.get("/api/user/admin/users");
-      dispatch({type:GET_ALL_USERS_SUCCESS, payload: data})
-    } catch (error) {
-        dispatch ({type:GET_ALL_USERS_FAIL});
-    } 
+    dispatch(current());
+    history.push("/profile");
+  } catch (error) {
+    dispatch({ type: FAIL_USER });
+  }
 };

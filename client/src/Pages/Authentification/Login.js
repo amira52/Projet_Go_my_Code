@@ -23,18 +23,26 @@ const Login = ({ history }) => {
     };
   }, []);
   return (
-    <div className="container-fluid">
+    <div className="container-fluidd">
       <div className="row no-gutter">
         <div className="d-none d-md-flex col-md-4 col-lg-6 bg-image" />
         <div className="col-md-8 col-lg-6">
           <div className="login d-flex align-items-center py-5">
-            <div className="container">
+            <div
+              className="container"
+              style={{ backgroundColor: "white", height: "300px" }}
+            >
               <div className="row">
                 <div className="col-md-9 col-lg-8 mx-auto">
                   {errors.length > 0
                     ? errors.map((el) => <Errors error={el} />)
                     : null}
-                  <h3 className="login-heading mb-4">Welcome back!</h3>
+                  <h3
+                    className="login-heading mb-4"
+                    style={{ marginBottom: "10%" }}
+                  >
+                    Welcome back!
+                  </h3>
                   <form onSubmit={handleLogin}>
                     <div className="form-label-group">
                       <input
@@ -75,6 +83,7 @@ const Login = ({ history }) => {
                       </label>
                     </div>
                     <button
+                      style={{ width: "40%" }}
                       className="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2"
                       type="submit"
                     >

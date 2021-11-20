@@ -8,11 +8,12 @@ const {
   GET_ALL_USERS_SUCCESS,
   GET_ALL_USERS_FAIL,
   GET_ALL_USERS_LOAD,
+  GET_USER,
 } = require("../constants/user");
 
 // initialstate
 const initialState = {
-  users:[],
+  users: [],
   user: {},
   errors: [],
   isAuth: false,
@@ -41,18 +42,17 @@ const userReducer = (state = initialState, { type, payload }) => {
       return { ...state, user: {}, isAuth: false };
     case "VIDE_ERRORS":
       return { ...state, errors: [] };
-      case GET_ALL_USERS_SUCCESS:
-      return{...state, users: payload.users, load:false};
-      case GET_ALL_USERS_FAIL:
-     return{...state, isError:true, load:false};
-      case GET_ALL_USERS_LOAD:
-      return{...state, load:true};
+    case GET_ALL_USERS_SUCCESS:
+      return { ...state, users: payload.users, load: false };
+    case GET_ALL_USERS_FAIL:
+      return { ...state, isError: true, load: false };
+    case GET_ALL_USERS_LOAD:
+      return { ...state, load: true };
+    case GET_USER:
+      return { ...state, user: payload.user, isLoad: false };
     default:
       return state;
   }
 };
 
 export default userReducer;
-// export const GET_ALL_USERS_SUCCESS = "GET_ALL_USERS_SUCCESS";
-// export const GET_ALL_USERS_fAIL = "GET_ALL_USERS_FAIL";
-// export const GET_ALL_USERS_LOAD = "GET_ALL_USERS_LOAD";

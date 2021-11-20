@@ -1,8 +1,19 @@
 import React from "react";
 import "./UserCard.css";
 import DeleteIcon from "@mui/icons-material/Delete";
+import { useDispatch } from "react-redux";
+import { deleteUser } from "../JS/actions/user";
+
+
 function UserCard({ user }) {
   const { name, email, phone } = user;
+  const dispatch = useDispatch();
+  const handleDelete = () => {
+    const result = window.confirm("confirm delete?");
+    if (result) {
+      dispatch(deleteUser(user._id));
+    }
+  };
   return (
     <div className="container">
       <div className="card">
@@ -25,7 +36,7 @@ function UserCard({ user }) {
               <p>{phone}</p>
             </span>
             <div className="bnt-card">
-              <DeleteIcon />
+              <DeleteIcon onClick={handleDelete} />
             </div>
           </div>
         </div>

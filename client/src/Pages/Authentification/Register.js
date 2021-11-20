@@ -24,12 +24,15 @@ const Register = ({ history }) => {
     };
   }, []);
   return (
-    <div className="container-fluid">
+    <div className="container1-fluid">
       <div className="row no-gutter">
-        <div className="d-none d-md-flex col-md-4 col-lg-6 bg-image" />
-        <div className="col-md-8 col-lg-6">
+        <div
+          className="d-none d-md-flex col-md-4 col-lg-6 bg-image"
+          style={{ width: "100%" }}
+        />
+        <div className="col-md-8 col-lg-66">
           <div className="login d-flex align-items-center py-5">
-            <div className="container">
+            <div className="container1" style={{ width: "100%" }}>
               <div className="row">
                 <div className="col-md-9 col-lg-8 mx-auto">
                   {errors.length > 0
@@ -49,7 +52,6 @@ const Register = ({ history }) => {
                         autofocus
                         onChange={handleChange}
                       />
-                      
                     </div>
                     <div className="forms">
                       <label htmlFor="inputEmail">Email address</label>
@@ -63,7 +65,6 @@ const Register = ({ history }) => {
                         autofocus
                         onChange={handleChange}
                       />
-                      
                     </div>
                     <div className="forms">
                       <label htmlFor="inputPassword">Password</label>
@@ -76,7 +77,6 @@ const Register = ({ history }) => {
                         required
                         onChange={handleChange}
                       />
-                      
                     </div>
                     <div className="forms">
                       <label htmlFor="inputEmail">Phone Number</label>
@@ -89,7 +89,6 @@ const Register = ({ history }) => {
                         autofocus
                         onChange={handleChange}
                       />
-                      
                     </div>
                     <div className="custom-control custom-checkbox mb-3">
                       <input
