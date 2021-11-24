@@ -34,8 +34,8 @@ const Footer = () => {
           <h2 className="title"> Email </h2>
           <p className="paraghraphe">
             {" "}
-            emira.zrelli@gmail.com <br />
-            Phone: +216 50 700 401
+            emira. <br />
+            Phone: +
           </p>
         </div>
       </div>

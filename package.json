@@ -4,11 +4,12 @@
   "description": "Projet",
   "main": "server.js",
   "scripts": {
-    "client-install":"npm install --prefix client",
     "back": "nodemon server",
-    "front": "cd client && npm start",
     "dev": "concurrently \"npm run front\" \"npm run back\"",
-    "heroku-postbuild":  "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "start": "node server.js",
+    "server": "nodemon server.js --exec babel-node --presets babel-preset-env",
+    "front": "npm start --prefix client",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
   },
   "author": "Emira ZRELLI",
   "license": "ISC",
@@ -24,6 +25,7 @@
   "devDependencies": {
     "concurrently": "^6.3.0",
     "dotenv": "^10.0.0",
+    "gh-pages": "^3.2.3",
     "nodemon": "^2.0.14"
   }
 }
